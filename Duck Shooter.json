@@ -174,6 +174,36 @@
         "name": "Assets\\HUD\\icon_bullet_gold_short.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Assets/Sounds/gun-reload.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Assets\\Sounds\\gun-reload.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/Sounds/gun-shot.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Assets\\Sounds\\gun-shot.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/Sounds/gun-empty.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Assets\\Sounds\\gun-empty.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1090,7 +1120,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Let the Riffle shot"
+          "comment": "Riffle shot"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1102,6 +1132,17 @@
               "parameters": [
                 "",
                 "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Riffle",
+                "numBullet",
+                "<=",
+                "Riffle.maxBullet"
               ]
             },
             {
@@ -1122,6 +1163,18 @@
                 "CursorX(\"Crosshair\") + 10",
                 "CursorY(\"Crosshair\") + 14",
                 "\"Crosshair\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Assets\\Sounds\\gun-shot.mp3",
+                "",
+                "50",
+                "1"
               ]
             }
           ]
@@ -1213,12 +1266,52 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Limit the shooting number"
+          "comment": "Empty Gun"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Riffle",
+                "numBullet",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Assets\\Sounds\\gun-empty.wav",
+                "",
+                "50",
+                "1"
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -1242,6 +1335,17 @@
               "parameters": [
                 "",
                 "\"Right\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Riffle",
+                "numBullet",
+                "<",
+                "Riffle.maxBullet"
               ]
             },
             {
@@ -1272,6 +1376,18 @@
                 "Animation",
                 "=",
                 "\"gold\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Assets\\Sounds\\gun-reload.wav",
+                "",
+                "50",
+                "1"
               ]
             }
           ]
