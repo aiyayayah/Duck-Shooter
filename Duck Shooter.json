@@ -204,6 +204,14 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "Assets/Objects/target_colored_outline.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Objects\\target_colored_outline.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -235,7 +243,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.5410025207925135,
+        "zoomFactor": 0.8606807604415364,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -439,7 +447,7 @@
           "width": 0,
           "x": 442,
           "y": 229,
-          "zOrder": 12,
+          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -455,7 +463,7 @@
           "width": 0,
           "x": 488,
           "y": 269,
-          "zOrder": 13,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -569,6 +577,38 @@
               "value": 2
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Crosshair",
+          "name": "TargetColored",
+          "persistentUuid": "b19db9fe-9953-4c09-bff7-fd8927576b8f",
+          "width": 0,
+          "x": 120,
+          "y": 178,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Crosshair",
+          "name": "Shot",
+          "persistentUuid": "a2326083-f9b8-4203-8dd1-d0589dbfd082",
+          "width": 0,
+          "x": 960,
+          "y": 280,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1018,6 +1058,71 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "TargetColored",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\Objects\\target_colored_outline.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 142,
+                            "y": 0
+                          },
+                          {
+                            "x": 142,
+                            "y": 142
+                          },
+                          {
+                            "x": 0,
+                            "y": 142
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1058,6 +1163,9 @@
           },
           {
             "objectName": "Bullet"
+          },
+          {
+            "objectName": "TargetColored"
           }
         ]
       },
@@ -1120,7 +1228,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Riffle shot"
+          "comment": "Riffle shot && Check target"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1141,8 +1249,18 @@
               "parameters": [
                 "Riffle",
                 "numBullet",
-                "<=",
-                "Riffle.maxBullet"
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "TargetColored",
+                "Crosshair.X()",
+                "Crosshair.Y()"
               ]
             },
             {
@@ -1391,6 +1509,129 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Moving target"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToRight\"",
+                "TargetColored.X() + 500",
+                "\"linear\"",
+                "1",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToRight\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::RemoveTween"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToRight\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToLeft\"",
+                "TargetColored.X() - 500",
+                "\"linear\"",
+                "1",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToLeft\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::RemoveTween"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToLeft\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToRight\"",
+                "TargetColored.X() + 500",
+                "\"linear\"",
+                "1",
+                "2"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -1595,6 +1836,10 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     }
