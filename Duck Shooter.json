@@ -150,6 +150,30 @@
         "name": "Assets\\Objects\\shot_blue_large.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Assets/HUD/icon_bullet_empty_short.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\HUD\\icon_bullet_empty_short.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/HUD/icon_bullet_gold_long.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\HUD\\icon_bullet_gold_long.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/HUD/icon_bullet_gold_short.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\HUD\\icon_bullet_gold_short.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -172,7 +196,7 @@
       "title": "",
       "v": 209,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 40,
         "gridHeight": 40,
@@ -180,8 +204,8 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.7537544073501775,
+        "snap": true,
+        "zoomFactor": 1.324591133101284,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -405,6 +429,116 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Bullet",
+          "name": "Bullet",
+          "persistentUuid": "10d3ffea-dec6-43e4-b46c-2b7a0322d8a1",
+          "width": 0,
+          "x": 880,
+          "y": 484,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Bullet",
+          "name": "Bullet",
+          "persistentUuid": "b96cbb8f-2100-42a0-b6cc-15d6b129059a",
+          "width": 0,
+          "x": 840,
+          "y": 484,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Bullet",
+          "name": "Bullet",
+          "persistentUuid": "539ccdd0-7147-4990-94a8-97461f51ba18",
+          "width": 0,
+          "x": 720,
+          "y": 484,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Bullet",
+          "name": "Bullet",
+          "persistentUuid": "83decbce-6f71-4e9e-8dba-d9d11d4bfd9e",
+          "width": 0,
+          "x": 800,
+          "y": 484,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Bullet",
+          "name": "Bullet",
+          "persistentUuid": "22258069-05b5-4d88-8f3e-b7cccfdef969",
+          "width": 0,
+          "x": 760,
+          "y": 484,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 2
+            }
+          ]
         }
       ],
       "objects": [
@@ -611,7 +745,23 @@
           "name": "Riffle",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "numBullet",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "name": "maxBullet",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "name": "=",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "animations": [
@@ -724,6 +874,120 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Bullet",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "id",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "gold",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\HUD\\icon_bullet_gold_short.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 21,
+                            "y": 0
+                          },
+                          {
+                            "x": 21,
+                            "y": 35
+                          },
+                          {
+                            "x": 0,
+                            "y": 35
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "empty",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\HUD\\icon_bullet_empty_short.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 21,
+                            "y": 0
+                          },
+                          {
+                            "x": 21,
+                            "y": 35
+                          },
+                          {
+                            "x": 0,
+                            "y": 35
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -761,10 +1025,25 @@
           },
           {
             "objectName": "Crosshair"
+          },
+          {
+            "objectName": "Bullet"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Let the Crosshair follow the cursor and Riffle follow cursor"
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -802,6 +1081,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Let the Riffle shot"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -812,6 +1103,12 @@
                 "",
                 "\"Left\""
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
@@ -825,6 +1122,83 @@
                 "CursorX(\"Crosshair\") + 10",
                 "CursorY(\"Crosshair\") + 14",
                 "\"Crosshair\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Reduce the numBullet and the animation"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Bullet",
+                "id",
+                "=",
+                "Riffle.numBullet"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Riffle",
+                "numBullet",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Bullet",
+                "Animation",
+                "=",
+                "\"empty\""
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "Riffle.numBullet",
+                "\"info\"",
+                ""
               ]
             }
           ]
@@ -953,6 +1327,39 @@
           "isLightingLayer": false,
           "isLocked": false,
           "name": "Crosshair",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Bullet",
           "renderingType": "",
           "visibility": true,
           "cameras": [],
