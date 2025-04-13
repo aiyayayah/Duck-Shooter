@@ -62,7 +62,32 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "file": "Assets/Stall/bg_wood.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Stall\\bg_wood.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/Stall/water2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Stall\\water2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/Stall/grass2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Stall\\grass2.png",
+        "smoothed": true,
+        "userAdded": false
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
@@ -75,15 +100,15 @@
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Untitled_32scene",
-      "name": "Untitled scene",
+      "mangledName": "Duck_32Shooter",
+      "name": "Duck Shooter",
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
       "v": 209,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -91,16 +116,130 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.7291666666666666,
+        "snap": true,
+        "zoomFactor": 0.8054451666651836,
         "windowMask": false
       },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
-      "objects": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 544,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BgWood",
+          "persistentUuid": "2ebb10ba-c75f-4cfb-b2f8-e6e6f99c5d56",
+          "width": 960,
+          "x": 0,
+          "y": 0,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 160,
+          "keepRatio": true,
+          "layer": "Platform",
+          "name": "Water2",
+          "persistentUuid": "87807f54-378d-494e-91ab-dfff86693c93",
+          "width": 960,
+          "x": 0,
+          "y": 384,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 160,
+          "keepRatio": true,
+          "layer": "Platform",
+          "name": "Water2",
+          "persistentUuid": "5e1d2cd4-5250-409c-a0bb-407232511e82",
+          "width": 896,
+          "x": 64,
+          "y": 384,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 160,
+          "keepRatio": true,
+          "layer": "Platform",
+          "name": "Grass2",
+          "persistentUuid": "38a0b0de-746f-4efb-b471-23d0accf3281",
+          "width": 960,
+          "x": 0,
+          "y": 288,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "BgWood",
+          "texture": "Assets\\Stall\\bg_wood.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "Grass2",
+          "texture": "Assets\\Stall\\grass2.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "Water2",
+          "texture": "Assets\\Stall\\water2.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        }
+      ],
       "objectsFolderStructure": {
-        "folderName": "__ROOT"
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "BgWood"
+          },
+          {
+            "objectName": "Grass2"
+          },
+          {
+            "objectName": "Water2"
+          }
+        ]
       },
       "events": [],
       "layers": [
@@ -147,9 +286,55 @@
               "booleanParameters": {}
             }
           ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Platform",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        }
+      ]
     }
   ],
   "externalEvents": [],
