@@ -240,6 +240,14 @@
         "name": "Assets\\Objects\\target_colored_outline.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Assets/Objects/stick_metal_outline.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Objects\\stick_metal_outline.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -271,7 +279,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.8606807604415364,
+        "zoomFactor": 0.7537544073501815,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -489,8 +497,8 @@
           "name": "Riffle",
           "persistentUuid": "251cfbdd-1763-4c22-88c7-75659592c065",
           "width": 0,
-          "x": 488,
-          "y": 269,
+          "x": 458,
+          "y": 281,
           "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
@@ -628,15 +636,21 @@
           "height": 0,
           "keepRatio": true,
           "layer": "Crosshair",
-          "name": "Shot",
-          "persistentUuid": "a2326083-f9b8-4203-8dd1-d0589dbfd082",
+          "name": "TargetColored",
+          "persistentUuid": "5863544d-2fc2-4245-bc6a-c14ce4887986",
           "width": 0,
-          "x": 960,
-          "y": 280,
-          "zOrder": 21,
+          "x": 618,
+          "y": 178,
+          "zOrder": 24,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "targetID",
+              "type": "number",
+              "value": 2
+            }
+          ]
         }
       ],
       "objects": [
@@ -1100,7 +1114,13 @@
           "name": "TargetColored",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "targetID",
+              "type": "number",
+              "value": 1
+            }
+          ],
           "effects": [],
           "behaviors": [
             {
@@ -1158,6 +1178,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "StickMetal",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\Objects\\stick_metal_outline.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 127
+                          },
+                          {
+                            "x": 0,
+                            "y": 127
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1201,6 +1281,9 @@
           },
           {
             "objectName": "TargetColored"
+          },
+          {
+            "objectName": "StickMetal"
           }
         ]
       },
@@ -1249,6 +1332,96 @@
                 "Riffle",
                 "=",
                 "CursorX(\"Crosshair\")"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Riffle shot && Check target"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Riffle",
+                "numBullet",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "TargetColored",
+                "Crosshair.X()",
+                "Crosshair.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "Shot",
+                "Shot",
+                "CursorX(\"Crosshair\") + 10",
+                "CursorY(\"Crosshair\") + 14",
+                "\"Crosshair\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Assets\\Sounds\\gun-shot.mp3",
+                "",
+                "50",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Sticker::Sticker::Stick"
+              },
+              "parameters": [
+                "Shot",
+                "Sticker",
+                "TargetColored",
+                ""
               ]
             }
           ]
@@ -1566,7 +1739,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Moving target"
+          "comment": "Target move left and right\n"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1583,6 +1756,16 @@
           "actions": [
             {
               "type": {
+                "value": "LinkedObjects::LinkObjects"
+              },
+              "parameters": [
+                "",
+                "TargetColored",
+                "StickMetal"
+              ]
+            },
+            {
+              "type": {
                 "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
               },
               "parameters": [
@@ -1591,7 +1774,7 @@
                 "\"TweenToRight\"",
                 "TargetColored.X() + 500",
                 "\"linear\"",
-                "1",
+                "1.5",
                 "2"
               ]
             }
@@ -1632,7 +1815,7 @@
                 "\"TweenToLeft\"",
                 "TargetColored.X() - 500",
                 "\"linear\"",
-                "1",
+                "1.5",
                 "2"
               ]
             }
@@ -1673,7 +1856,152 @@
                 "\"TweenToRight\"",
                 "TargetColored.X() + 500",
                 "\"linear\"",
-                "1",
+                "1.5",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Target move up and down"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "TargetColored",
+                "targetID",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "TargetColored",
+                "targetID",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToDown\"",
+                "TargetColored.Y() - 300",
+                "\"linear\"",
+                "1.5",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToDown\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::RemoveTween"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToDown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToUp\"",
+                "TargetColored.Y() + 300",
+                "\"linear\"",
+                "1.5",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToUp\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::RemoveTween"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToUp\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "TargetColored",
+                "Tween",
+                "\"TweenToDown\"",
+                "TargetColored.Y() - 300",
+                "\"linear\"",
+                "1.5",
                 "2"
               ]
             }
