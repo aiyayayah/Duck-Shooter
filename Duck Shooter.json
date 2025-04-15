@@ -248,6 +248,38 @@
         "name": "Assets\\Objects\\stick_metal_outline.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Assets_Stall_curtain_right.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/Assets_Stall_curtain_right.png2.png\"}",
+        "name": "Assets\\Stall\\curtain_right.png2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Assets_Stall_curtain_right.png3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Assets\\Stall\\curtain_right.png3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Assets_Stall_curtain_right.png4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Assets\\Stall\\curtain_right.png4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Assets_Stall_curtain_straight.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Assets\\Stall\\curtain_straight.png2",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -279,7 +311,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.7537544073501815,
+        "zoomFactor": 1.015915023626357,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -636,12 +668,28 @@
           "height": 0,
           "keepRatio": true,
           "layer": "Crosshair",
+          "name": "StickMetal",
+          "persistentUuid": "40a7d19c-4050-4eb2-94f1-74d4541f5a93",
+          "width": 0,
+          "x": 160,
+          "y": 400,
+          "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Crosshair",
           "name": "TargetColored",
           "persistentUuid": "5863544d-2fc2-4245-bc6a-c14ce4887986",
           "width": 0,
-          "x": 618,
-          "y": 178,
-          "zOrder": 24,
+          "x": 680,
+          "y": 320,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": [
@@ -702,7 +750,7 @@
           "assetStoreId": "",
           "height": 32,
           "name": "Curtain_Right",
-          "texture": "Assets\\Stall\\curtain_right.png",
+          "texture": "Assets\\Stall\\curtain_right.png4",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
           "variables": [],
@@ -713,7 +761,7 @@
           "assetStoreId": "",
           "height": 32,
           "name": "Curtain_Straight",
-          "texture": "Assets\\Stall\\curtain_straight.png",
+          "texture": "Assets\\Stall\\curtain_straight.png2",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
           "variables": [],
@@ -1751,6 +1799,17 @@
               "parameters": [
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "TargetColored",
+                "targetID",
+                "=",
+                "1"
+              ]
             }
           ],
           "actions": [
@@ -1900,24 +1959,13 @@
           "actions": [
             {
               "type": {
-                "value": "SetNumberObjectVariable"
-              },
-              "parameters": [
-                "TargetColored",
-                "targetID",
-                "=",
-                "2"
-              ]
-            },
-            {
-              "type": {
                 "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
               },
               "parameters": [
                 "TargetColored",
                 "Tween",
                 "\"TweenToDown\"",
-                "TargetColored.Y() - 300",
+                "TargetColored.Y()  - 300",
                 "\"linear\"",
                 "1.5",
                 "2"
