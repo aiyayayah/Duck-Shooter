@@ -126,7 +126,7 @@
       {
         "file": "Assets/Stall/curtain_right.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"Assets/Stall/curtain_right.png\",\"extension\":\".png\",\"pskl\":{}}",
         "name": "Assets\\Stall\\curtain_right.png",
         "smoothed": true,
         "userAdded": false
@@ -400,6 +400,22 @@
         "name": "Assets\\Stall\\curtain_right.png8",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Assets_Stall_curtain_right.png9.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Assets\\Stall\\curtain_right.png9",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Assets/Objects/duck_outline_yellow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Objects\\duck_outline_yellow.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -431,10 +447,22 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.7537544073501851,
+        "zoomFactor": 0.7791712547654681,
         "windowMask": false
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "Group_Targets",
+          "objects": [
+            {
+              "name": "DuckYellow"
+            },
+            {
+              "name": "TargetColored"
+            }
+          ]
+        }
+      ],
       "variables": [],
       "instances": [
         {
@@ -460,12 +488,12 @@
           "depth": 1,
           "height": 160,
           "keepRatio": true,
-          "layer": "Platform",
+          "layer": "",
           "name": "Water2",
           "persistentUuid": "87807f54-378d-494e-91ab-dfff86693c93",
-          "width": 960,
-          "x": 0,
-          "y": 384,
+          "width": 947,
+          "x": 3,
+          "y": 363,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -480,10 +508,10 @@
           "layer": "Platform",
           "name": "Water2",
           "persistentUuid": "5e1d2cd4-5250-409c-a0bb-407232511e82",
-          "width": 896,
-          "x": 64,
-          "y": 384,
-          "zOrder": 3,
+          "width": 928,
+          "x": -2,
+          "y": 363,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -497,10 +525,10 @@
           "layer": "Platform",
           "name": "Grass2",
           "persistentUuid": "38a0b0de-746f-4efb-b471-23d0accf3281",
-          "width": 960,
-          "x": 0,
-          "y": 288,
-          "zOrder": 1,
+          "width": 930,
+          "x": 2,
+          "y": 283,
+          "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -558,40 +586,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 26,
-          "keepRatio": true,
-          "layer": "Curtains",
-          "name": "Curtain_Rope",
-          "persistentUuid": "0d23cd4c-08cb-4f9c-bbe7-57015a9dcd4a",
-          "width": 35,
-          "x": 927,
-          "y": 264,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 26,
-          "keepRatio": true,
-          "layer": "Curtains",
-          "name": "Curtain_Rope",
-          "persistentUuid": "3febb711-267b-47b3-831c-6e4fa657837a",
-          "width": 35,
-          "x": -4,
-          "y": 268,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -615,8 +609,8 @@
           "name": "Riffle",
           "persistentUuid": "251cfbdd-1763-4c22-88c7-75659592c065",
           "width": 0,
-          "x": 458,
-          "y": 281,
+          "x": 459,
+          "y": 310,
           "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
@@ -737,13 +731,13 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "Crosshair",
+          "layer": "",
           "name": "TargetColored",
           "persistentUuid": "b19db9fe-9953-4c09-bff7-fd8927576b8f",
           "width": 0,
-          "x": 120,
-          "y": 178,
-          "zOrder": 15,
+          "x": 127,
+          "y": 141,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -753,29 +747,13 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "Crosshair",
-          "name": "StickMetal",
-          "persistentUuid": "40a7d19c-4050-4eb2-94f1-74d4541f5a93",
-          "width": 0,
-          "x": 160,
-          "y": 320,
-          "zOrder": 23,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "Crosshair",
+          "layer": "",
           "name": "TargetColored",
           "persistentUuid": "5863544d-2fc2-4245-bc6a-c14ce4887986",
           "width": 0,
-          "x": 680,
-          "y": 320,
-          "zOrder": 15,
+          "x": 675,
+          "y": 182,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": [
@@ -797,7 +775,7 @@
           "persistentUuid": "aca1f948-3af5-4d62-9d03-7e0252d14470",
           "width": 130,
           "x": 0,
-          "y": 62,
+          "y": 63,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -807,15 +785,49 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 469,
+          "height": 426,
           "keepRatio": true,
           "layer": "Curtains",
           "name": "Curtain_Right",
-          "persistentUuid": "be7b1b3f-470d-4da4-b4a3-e8575b72d32a",
-          "width": 131,
-          "x": 827,
-          "y": 62,
+          "persistentUuid": "972bdc70-7a4a-43be-82e4-4d39b4cc76b7",
+          "width": 130,
+          "x": 829,
+          "y": 67,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 90,
+          "keepRatio": true,
+          "layer": "Platform",
+          "name": "DuckYellow",
+          "persistentUuid": "4fb1166c-4e92-4897-8d03-47230d0e6559",
+          "width": 94,
+          "x": 294,
+          "y": 286,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 160,
+          "keepRatio": true,
+          "layer": "Platform",
+          "name": "Water2",
+          "persistentUuid": "e4ae8dc3-c67a-4d66-9629-2283f111dda7",
+          "width": 889,
+          "x": 61,
+          "y": 341,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1400,12 +1412,77 @@
           "assetStoreId": "",
           "height": 32,
           "name": "Curtain_Right",
-          "texture": "Assets\\Stall\\curtain_right.png8",
+          "texture": "Assets\\Stall\\curtain_right.png9",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "DuckYellow",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\Objects\\duck_outline_yellow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 113,
+                            "y": 0
+                          },
+                          {
+                            "x": 113,
+                            "y": 109
+                          },
+                          {
+                            "x": 0,
+                            "y": 109
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1416,6 +1493,9 @@
           },
           {
             "objectName": "Riffle"
+          },
+          {
+            "objectName": "DuckYellow"
           },
           {
             "objectName": "Shot"
@@ -1566,7 +1646,7 @@
                 "Shot",
                 "CursorX(\"Crosshair\") + 10",
                 "CursorY(\"Crosshair\") + 14",
-                "\"Crosshair\""
+                ""
               ]
             },
             {
@@ -1591,6 +1671,66 @@
                 "TargetColored",
                 ""
               ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "TargetColored",
+                    "targetID",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "Shot",
+                    "Shot",
+                    "CursorX(\"Crosshair\") + 10",
+                    "CursorY(\"Crosshair\") + 14",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Sticker::Sticker::Stick"
+                  },
+                  "parameters": [
+                    "Shot",
+                    "Sticker",
+                    "TargetColored",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "TargetColored",
+                    "targetID",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": []
             }
           ]
         },
@@ -1656,7 +1796,7 @@
                 "Shot",
                 "CursorX(\"Crosshair\") + 10",
                 "CursorY(\"Crosshair\") + 14",
-                "\"Crosshair\""
+                ""
               ]
             },
             {
@@ -1935,20 +2075,10 @@
           "actions": [
             {
               "type": {
-                "value": "LinkedObjects::LinkObjects"
-              },
-              "parameters": [
-                "",
-                "TargetColored",
-                "StickMetal"
-              ]
-            },
-            {
-              "type": {
                 "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToRight\"",
                 "TargetColored.X() + 500",
@@ -1979,7 +2109,7 @@
                 "value": "Tween::RemoveTween"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToRight\""
               ]
@@ -1989,12 +2119,12 @@
                 "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToLeft\"",
                 "TargetColored.X() - 500",
                 "\"linear\"",
-                "1.5",
+                "RandomFloatInRange(0.5, 1.5)",
                 "2"
               ]
             }
@@ -2008,7 +2138,7 @@
                 "value": "Tween::HasFinished"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToLeft\""
               ]
@@ -2020,7 +2150,7 @@
                 "value": "Tween::RemoveTween"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToLeft\""
               ]
@@ -2030,12 +2160,12 @@
                 "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
               },
               "parameters": [
-                "TargetColored",
+                "Group_Targets",
                 "Tween",
                 "\"TweenToRight\"",
                 "TargetColored.X() + 500",
                 "\"linear\"",
-                "1.5",
+                "RandomFloatInRange(0.5, 1.5)",
                 "2"
               ]
             }
@@ -2171,6 +2301,73 @@
                 "\"linear\"",
                 "1.5",
                 "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "TargetColored",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StickMetal",
+                "TargetColored.X()",
+                "TargetColored.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LinkedObjects::LinkObjects"
+              },
+              "parameters": [
+                "",
+                "StickMetal",
+                "TargetColored"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "TargetColored",
+          "conditions": [
+            {
+              "type": {
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "StickMetal",
+                "TargetColored",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "StickMetal",
+                "=",
+                "TargetColored.X() + 50",
+                "=",
+                "TargetColored.Y() + 140"
               ]
             }
           ]
